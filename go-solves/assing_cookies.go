@@ -11,7 +11,7 @@ func FindContentChildren(g []int, s []int) int {
 	slices.Sort(s)
 
 	for i := 0; i < len(s); i++ {
-		ni := binarySearch(s[i], g)
+		ni := BinarySearch(s[i], g)
 		if ni == -1 {
 			continue
 		} else {
@@ -22,7 +22,7 @@ func FindContentChildren(g []int, s []int) int {
 	return content
 }
 
-func binarySearch(s int, g []int) int {
+func BinarySearch(s int, g []int) int {
 	low := 0
 	high := len(g) - 1
 	for low <= high {
