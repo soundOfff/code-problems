@@ -1,7 +1,7 @@
 package main
 
 // 300. Longest Increasing Subsequence
-func LengthOfLIS(nums []int) int {
+func LengthOfLIS3(nums []int) int {
 	max := 0
 	for i := 0; i < len(nums)-1; i++ {
 		aux := 0
