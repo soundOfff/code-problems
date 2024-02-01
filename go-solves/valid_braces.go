@@ -21,6 +21,10 @@ func (s *Stack) Pop() (string, bool) {
 	}
 }
 
+func (s *Stack) Peek() int {
+	return len(*s) - 1
+}
+
 func ValidBraces(str string) bool {
 	op := map[string]string{
 		"(": ")",

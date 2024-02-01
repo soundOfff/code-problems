@@ -21,4 +21,15 @@ func main() {
 	fmt.Println(isLeafSimilar)
 	matrix := FindMatrix([]int{1, 3, 4, 1, 2, 3, 1})
 	fmt.Println(matrix)
+
+	// maxDiff := MaxAncestorDiff(&TreeNode{Val: 3, Left: &TreeNode{Val: 5, Left: &TreeNode{Val: 6}, Right: &TreeNode{Val: 2, Left: &TreeNode{Val: 7}, Right: &TreeNode{Val: 4}}}, Right: &TreeNode{Val: 1, Left: &TreeNode{Val: 9}, Right: &TreeNode{Val: 8}}})
+	// fmt.Println(maxDiff)
+	areAlike := HalvesAreAlike("book")
+	fmt.Println(areAlike)
+
+	// winners := FindWinners([][]int{{1, 3}, {2, 3}, {3, 6}, {5, 6}, {5, 7}, {4, 5}, {4, 8}, {4, 9}, {10, 4}, {10, 9}})
+	// fmt.Println(winners)
+
+	tmps := DailyTemperatures([]int{73, 74, 75, 71, 69, 72, 76, 73})
+	fmt.Println(tmps)
 }
