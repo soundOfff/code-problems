@@ -40,15 +40,19 @@ const int MAXN = 1e6 + 3;
 
 int dp[1010][1010];
 vs grid;
-int ROWS,COLS;
+int ROWS, COLS;
 
 int solve(int row, int col)
 {
     // Base cases
-    if (row > ROWS-1 || col > COLS-1) return 0;
-    if (grid[row][col] == '#') return 0;
-    if (dp[row][col] != -1) return dp[row][col];
-    if (row == ROWS-1 && col == COLS-1) return 1; // reached the exit
+    if (row > ROWS - 1 || col > COLS - 1)
+        return 0;
+    if (grid[row][col] == '#')
+        return 0;
+    if (dp[row][col] != -1)
+        return dp[row][col];
+    if (row == ROWS - 1 && col == COLS - 1)
+        return 1; // reached the exit
 
     return dp[row][col] = (solve(row + 1, col) + solve(row, col + 1)) % MOD;
 }
@@ -56,14 +60,15 @@ int solve(int row, int col)
 int main()
 {
     cin >> ROWS >> COLS;
-    for(int i=0;i<ROWS;i++) {
+    for (int i = 0; i < ROWS; i++)
+    {
         string s;
         cin >> s;
         grid.push_back(s);
     }
     fill(dp, -1);
 
-    cout << solve(0,0) << '\n';
+    cout << solve(0, 0) << '\n';
 
     return 0;
 }

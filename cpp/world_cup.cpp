@@ -1,27 +1,32 @@
 #include <bits/stdc++.h>
+#include <cmath>
+
+#define ll long long
 
 using namespace std;
 
-int main() {
-	int n;
+void reduce_one(vector<ll> &a, int index)
+{
+    if (a[index] > 0)
+    {
+        a[index]--;
+    }
+}
+
+int main()
+{
+    int n;
     cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++)
-    {
+    vector<ll> a(n);
+    for (ll i = 0; i < n; ++i)
         cin >> a[i];
-    }
-    int j = 0;
-    for (int i = 0;; i++)
+
+    ll k = 0;
+    while (a[k % n] != 0)
     {
-        if (a[j] <= i)
-        {
-            cout << j + 1 << '\n';
-            break;
-        }
-        j += 1;
-        if (j >= n)
-        {
-            j = 0;
-        }
+        reduce_one(a, k % n);
+        k++;
     }
+    cout << k << '\n';
+    return 0;
 }

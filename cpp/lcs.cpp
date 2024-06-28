@@ -36,7 +36,7 @@ const int MAXN = 3000 + 10;
 #define mp make_pair
 #define pb push_back
 
-int main() 
+int main()
 {
 	string s1, s2;
 	cin >> s1 >> s2;
@@ -55,13 +55,14 @@ int main()
 		}
 	}
 	string s;
-	for (int i = n1, j = n2; i >= 1 && j >= 1; )
+	for (int i = n1, j = n2; i >= 1 && j >= 1;)
 	{
 		{
-			if ( s1[i - 1] == s2[j - 1])
+			if (s1[i - 1] == s2[j - 1])
 			{
 				s.push_back(s1[i - 1]);
-				i--; j--;
+				i--;
+				j--;
 			}
 			else
 			{
@@ -72,6 +73,6 @@ int main()
 			}
 		}
 	}
-	reverse(s.begin(), s.end());//
+	reverse(s.begin(), s.end()); //
 	cout << s << endl;
 }
