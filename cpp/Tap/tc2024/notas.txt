@@ -1,0 +1,49 @@
+// Dia 4 - Problema REQ 
+
+[a1, ... , an] - l / r
+
+i = r - r/p^2
+r = r^-1 
+// Mo alg o segment tree
+
+
+E. RBS
+// Stack manteniendo 1 cuando abro y vuelvo a 0 cuando cierro.
+// Deberia quedar en 0 y no tener ningun negativo. En caso de quedar no es seq.
+// dp[bitmask(n), saldo] esta determinado por la mascara que voy teniendo
+// histograma para cada saldo cuantas veces aparece, mantengo un minimo y solo lo agrego al histograma si pasa eso
+
+
+A. Ghosts
+// Rotar la recta, cambiar de coordenadas a los vectores velocidad usando un eje x e y nuevo.
+// Si los fantamas se mueven solo en el eje x, van a chocar si las velocidades en x son iguales (v1x!=v2x)
+// Cuando se encuentren en x, van a subir y tiene que tener la misma velocidad en y (v1y == v2y)
+
+B. Matching Reduction
+// 1. Matching maximo de un grafo es la maxima cantidad de aristas que puedo sacar
+// 2. Max 3 veces. 
+// Rebalsa bro
+
+
+// Grafos picante
+ - Ore
+    - G tiene un ciclo hamiltoniano <=> Para cada par de nodos no adj, deg(u) + deg(v) >= n.
+        - Pasa solo una vez por cada nodo
+        - Por cada permutacion
+            - Si el puntaje no es n, cambio la permutacion por otra de mejor puntaje.
+
+ - Dirac
+    - Todo vertice u tiene deg(u) >= n / 2 => Tiene ciclo hamiltoniano.
+
+ - Cactus
+    - Cactus revolution (problem) https://dmoj.ca/problem/neerc10c
+    - Un grafo cactus deja tener ciclos pero una arista debe estar en un ciclo.
+    - Arbol vs cactus
+    - Para checkear si un grafo es cactus, se usa dfs y se recorre el tree edge, y se marcan.
+      Cuando voy a marcar y ya esta marcada puedo romper porque no es cactus.
+    - Verlo como un problema de arboles y un ciclo unico, luego trasladar esas soluciones a problema cactus.
+
+ - Ciclo y camino euleriano
+    - Si todos los grados son pares || El grado neto de cada nodo es 0 <=> Las aristas de un grafo no dirigido se particionan en ciclos.
+    - Para detectar un camino euleriano entre A y B
+      recorriendo todos los nodos entre A y B, si agrego una arista imaginaria tiene que quedar un ciclo.
