@@ -49,21 +49,34 @@ const int MAXN = 1e6 + 3;
 #define fbo find_by_order
 #define ook order_of_key
 
+ll N,Q;
+vl stairs;
+vl questions;
+
+void solve() {
+    fori(i, Q) {
+        auto aux = lower_bound(all(stairs), questions[i]);
+        int index = aux - stairs.begin();
+        ll sum = 0;
+        fori(j, index) sum += stairs[j];
+        cout << sum << " ";  
+    }
+    cout << endl;
+}
+
 int main()
 {
     ll t;
     cin >> t;
     while (t--)
     {
-        ll n, q;
-        vl a;
-        cin >> n >> q;
-        fori(i, n)
-        {
-            ll ai;
-            cin >> a[i];
-        }
+        cin >> N >> Q;
+        stairs.resize(N);
+        questions.resize(Q);
 
-        sortAsc(a);
+        fori(i, N) cin >> stairs[i];
+        fori(j, Q) cin >> questions[j];
+
+        solve();
     }
 }

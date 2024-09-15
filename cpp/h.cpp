@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define MAX 100005
 
 using namespace std;
 
@@ -11,25 +12,32 @@ typedef vector<long long int> vll;
 typedef vector<char> vc;
 typedef long double ld;
 
-const int INF = 1e9 + 7;
-const int MOD = 1e9 + 7;
-const int MAXN = 1e6 + 3;
-
-#define _ % MOD
-#define __ %= MOD
-
 #define fori(i, n) for (int i = 0; i < (n); ++i)
 #define fora(i, a, n) for (int i = a; i <= (n); ++i)
 #define ford(i, a, n) for (int i = a; i >= (n); --i)
-#define pq(x) priority_queue<x, std::vector<x>, compare>
 
-#define min3(a, b, c) min(a, min(b, c))
-#define max3(a, b, c) max(a, max(b, c))
-#define min4(a, b, c, d) min(a, min(b, min(c, d)))
-#define max4(a, b, c, d) max(a, max(b, max(c, d)))
-
-#define pb push_back
+int colors[MAX][2];
 
 int main()
 {
+    int n, c;
+    cin >> n >> c;
+    fori(i, n)
+    {
+        int x, color;
+        cin >> x >> color;
+        colors[i][0] = x;
+        colors[i][1] = color;
+    }
+
+    fori(i, n)
+    {
+        if (colors[i][0] != i + 1 && colors[i][1] != colors[colors[i][0] - 1][1])
+        {
+            cout << "N\n";
+            return 0;
+        }
+    }
+    cout << "Y\n";
+    return 0;
 }

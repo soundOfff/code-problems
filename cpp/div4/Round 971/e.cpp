@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 typedef long long ll;
@@ -30,6 +29,32 @@ const int MAXN = 1e6 + 3;
 
 #define pb push_back
 
-int main()
-{
+int main() {
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n,k;
+        cin >> n >> k;
+        int sum = n * (n - 1) / 2;
+        sum += n * k;
+
+        int l = k, r = k+n-1;
+        int m = INT_MAX;
+
+        while (l - r > 1)
+        {
+            int m = (l+r) >> 1;
+        }
+        
+        // for (int i = k+n-1; i >= k; --i) {
+        //     int sum = ((i-1)*i) / 2;
+        //     int sumL = abs(sumK - sum);
+        //     int sumR = abs(sumT - sum);
+        //     m = min(m, abs(sumL - sumR));
+        // }
+
+        cout << m << endl;
+    }
+    return 0;
 }
