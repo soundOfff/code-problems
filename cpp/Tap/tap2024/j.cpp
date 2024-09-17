@@ -16,8 +16,9 @@ int find2Swap(int i)
     {
         if (j == i || a[j] == a[i])
             continue;
-        if (i == 0) {
-            if ((a[j - 1] + a[i] != x && a[j + 1] + a[i] != x) && a[j] + a[i+1] != x)
+        if (i == 0)
+        {
+            if ((a[j - 1] + a[i] != x && a[j + 1] + a[i] != x) && a[j] + a[i + 1] != x)
             {
                 index = j;
                 break;
@@ -25,7 +26,7 @@ int find2Swap(int i)
         }
         if (j == 0)
         {
-            if (a[j+1] + a[i] != x && a[j] + a[i+1] != x)
+            if (a[j + 1] + a[i] != x && a[j] + a[i + 1] != x)
             {
                 index = j;
                 break;
@@ -33,7 +34,7 @@ int find2Swap(int i)
         }
         else
         {
-            if ((a[j - 1] + a[i] != x && a[j + 1] + a[i] != x) && (a[j] + a[i-1] != x && a[j] + a[i+1] != x))
+            if ((a[j - 1] + a[i] != x && a[j + 1] + a[i] != x) && (a[j] + a[i - 1] != x && a[j] + a[i + 1] != x))
             {
                 index = j;
                 break;
